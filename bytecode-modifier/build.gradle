@@ -1,0 +1,27 @@
+apply plugin: 'java'
+
+repositories{
+
+	mavenLocal()
+	mavenCentral()
+}
+
+
+dependencies {
+
+	// https://mvnrepository.com/artifact/org.ow2.asm/asm
+    compile group: 'org.ow2.asm', name: 'asm', version: '5.0.4'
+    compile group: 'org.ow2.asm', name: 'asm-commons', version: '5.0.4'
+
+}
+
+
+jar {
+	baseName='bytecode-modifier'
+	version='1.0'
+}
+
+
+task wrapper(type:Wrapper) {
+		gradleVersion = '3.3'
+}
